@@ -1,0 +1,20 @@
+services:
+  sakila:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: sakila
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - '3306:3036'
+    expose:
+      - '3306'
+    volumes:
+      - sakila_vol:/var/lib/mysql
+
+volumes:
+  sakila_vol:
+
+
